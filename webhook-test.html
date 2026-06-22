@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webhook test</title>
+  </head>
+  <body>
+    <h1>Apps Script webhook test</h1>
+    <p>Open this file directly in a browser (or serve it) and check the console / network tab.</p>
+    <button id="send">Send test payload</button>
+    <pre id="log"></pre>
+
+    <script>
+      const WEBHOOK_URL =
+        "https://script.google.com/macros/s/AKfycbyk3IQ4jXm5cgb6gvHUGASrRgaCaprblsvTeNcN7N7Ml8LmAVna_E_oXM3NprV_2p8mWw/exec";
+
+      const log = document.getElementById("log");
+      function append(msg) {
+        log.textContent += msg + "\n";
+        console.log(msg);
+      }
+
+      document.getElementById("send").addEventListener("click", () => {
+        const payload = {
+          method: "email",
+          value: "test@example.com",
+          primary: "Explorer",
+          secondary: "Builder",
+          context: { uncertainty: "low" },
+          timestamp: new Date().toISOString(),
+        };
+
+        append("Sending payload: " + JSON.stringify(payload));
+
+        // Same request shape used by src/webhook.js: no-cors + text/plain body.
+        fetch(WEBHOOK_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload),
+        })
+          .then(() => {
+            // With no-cors the response is opaque — fetch resolving just means
+            // the request was sent without a network error, not that the
+            // server processed it successfully. Check the Sheet / Apps Script
+            // execution log to confirm.
+            append("Fetch resolved (opaque response, can't read status). Check the Sheet now.");
+          })
+          .catch((err) => {
+            append("Fetch FAILED: " + err);
+          });
+      });
+    </script>
+  </body>
+</html>
