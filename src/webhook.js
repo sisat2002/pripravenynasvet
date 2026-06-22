@@ -19,10 +19,12 @@ export function sendContactToSheet({ method, value, result }) {
     timestamp: new Date().toISOString(),
   };
 
+  // Apps Script + no-cors only tolerates "simple" content types, so we send
+  // JSON as text/plain; Apps Script still reads it from e.postData.contents.
   fetch(WEBHOOK_URL, {
     method: "POST",
     mode: "no-cors",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "text/plain" },
     body: JSON.stringify(payload),
   }).catch((err) => {
     console.error("[webhook] Failed to send contact data:", err);
