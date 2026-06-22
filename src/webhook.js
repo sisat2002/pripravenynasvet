@@ -1,5 +1,4 @@
-// Replace with the real Google Apps Script / Sheets webhook URL when ready.
-export const WEBHOOK_URL = "https://example.com/REPLACE_WITH_YOUR_GOOGLE_SHEET_WEBHOOK_URL";
+export const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyk3IQ4jXm5cgb6gvHUGASrRgaCaprblsvTeNcN7N7Ml8LmAVna_E_oXM3NprV_2p8mWw/exec";
 
 export function sendContactToSheet({ method, value, result }) {
   if (!WEBHOOK_URL || WEBHOOK_URL.includes("REPLACE_WITH_YOUR_GOOGLE_SHEET_WEBHOOK_URL")) {
@@ -22,6 +21,7 @@ export function sendContactToSheet({ method, value, result }) {
 
   fetch(WEBHOOK_URL, {
     method: "POST",
+    mode: "no-cors",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   }).catch((err) => {
