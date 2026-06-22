@@ -5,7 +5,7 @@
     <title>Webhook test</title>
   </head>
   <body>
-    <h1>Apps Script webhook test</h1>
+    <h1>Apps Script webhook test (GET)</h1>
     <p>Open this file directly in a browser (or serve it) and check the console / network tab.</p>
     <button id="send">Send test payload</button>
     <pre id="log"></pre>
@@ -21,24 +21,20 @@
       }
 
       document.getElementById("send").addEventListener("click", () => {
-        const payload = {
+        const params = new URLSearchParams({
           method: "email",
           value: "test@example.com",
           primary: "Explorer",
           secondary: "Builder",
-          context: { uncertainty: "low" },
+          context: JSON.stringify({ uncertainty: "low" }),
           timestamp: new Date().toISOString(),
-        };
+        });
 
-        append("Sending payload: " + JSON.stringify(payload));
+        const url = `${WEBHOOK_URL}?${params.toString()}`;
+        append("Sending GET: " + url);
 
-        // Same request shape used by src/webhook.js: no-cors + text/plain body.
-        fetch(WEBHOOK_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify(payload),
-        })
+        // Same request shape used by src/webhook.js: GET + no-cors, no body.
+        fetch(url, { method: "GET", mode: "no-cors" })
           .then(() => {
             // With no-cors the response is opaque — fetch resolving just means
             // the request was sent without a network error, not that the

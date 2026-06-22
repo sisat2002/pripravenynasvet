@@ -1,3 +1,4 @@
+// Replace with the real Google Apps Script / Sheets webhook URL when ready.
 export const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyk3IQ4jXm5cgb6gvHUGASrRgaCaprblsvTeNcN7N7Ml8LmAVna_E_oXM3NprV_2p8mWw/exec";
 
 export function sendContactToSheet({ method, value, result }) {
@@ -10,22 +11,21 @@ export function sendContactToSheet({ method, value, result }) {
     return;
   }
 
-  const payload = {
+  const params = new URLSearchParams({
     method,
     value,
     primary: result.primary,
     secondary: result.secondary,
-    context: result.context,
+    context: JSON.stringify(result.context),
     timestamp: new Date().toISOString(),
-  };
+  });
 
-  // Apps Script + no-cors only tolerates "simple" content types, so we send
-  // JSON as text/plain; Apps Script still reads it from e.postData.contents.
-  fetch(WEBHOOK_URL, {
-    method: "POST",
+  // GET + no-cors avoids the request body entirely — Apps Script's doPost
+  // never received e.postData under no-cors, so we pass everything as query
+  // params instead and read them via e.parameter in doGet.
+  fetch(`${WEBHOOK_URL}?${params.toString()}`, {
+    method: "GET",
     mode: "no-cors",
-    headers: { "Content-Type": "text/plain" },
-    body: JSON.stringify(payload),
   }).catch((err) => {
     console.error("[webhook] Failed to send contact data:", err);
   });
