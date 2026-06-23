@@ -1,5 +1,5 @@
 // Replace with the real Google Apps Script / Sheets webhook URL when ready.
-export const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzjNCwmO19rpqejUPRoblXxqyCedZsoo-Vkq4D4Ibx3wBvaM8avXZmZZIqwxWBkjBkAng/exec";
+export const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz8g0-CgWgX4tsEoQs-ONVG3BrE0yjspaVpvdxUujBRnWXL-32ag2Y-9jH9QJxqwEkP0g/exec";
 
 export function sendContactToSheet({ method, value, result }) {
   if (!WEBHOOK_URL || WEBHOOK_URL.includes("REPLACE_WITH_YOUR_GOOGLE_SHEET_WEBHOOK_URL")) {
