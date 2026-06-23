@@ -585,23 +585,9 @@ function ResultScreen({ result }) {
       >
         <p style={{ fontSize: 16, lineHeight: 1.7, color: COLORS.cream, marginBottom: 18 }}>{barrier.text}</p>
         <p style={{ fontSize: 19, fontWeight: 700, color: COLORS.parchment, marginBottom: 22, lineHeight: 1.4 }}>{barrier.question}</p>
-        <a
-          href="https://pripravenynasvet.sk"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-block",
-            padding: "16px 36px",
-            borderRadius: 12,
-            background: `linear-gradient(135deg, ${COLORS.gold}, ${COLORS.goldBright})`,
-            color: COLORS.bg,
-            fontSize: 16,
-            fontWeight: 700,
-            textDecoration: "none",
-          }}
-        >
-          Áno, chcem vedieť →
-        </a>
+        <p style={{ fontSize: 16, color: COLORS.cream, lineHeight: 1.6 }}>
+          Ak máš otázky, napíš mi na sisat2002@gmail.com alebo na Instagram @simona.hutkova
+        </p>
       </div>
 
       <p style={{ textAlign: "center", fontSize: 13, color: COLORS.gray, marginTop: 30 }}>
