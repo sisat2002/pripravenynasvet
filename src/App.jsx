@@ -636,6 +636,7 @@ export default function App() {
   }
 
   function handleContactSubmit(method, value) {
+    console.log("webhook version 2");
     const computed = computeProfile(answers);
     setResult(computed);
     setStep((s) => s + 1);
