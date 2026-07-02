@@ -79,12 +79,12 @@ const T = {
       label: "Moments",
       h2: "From Slovakia to the world.",
       photos: [
-        { file: "photo_professional.jpg", caption: "Groningen, Netherlands" },
-        { file: "photo_stage_saudi.jpg", caption: "Riyadh, Saudi Arabia" },
-        { file: "photo_startupbootcamp.jpg", caption: "Startupbootcamp FutureXPO" },
-        { file: "photo_naples.jpg", caption: "Naples, Italy" },
-        { file: "photo_extra.jpg", caption: "Somewhere beautiful" },
-        { file: "photo_fraunhofer.jpg", caption: "Munich, Germany" },
+        { file: "photo_hero.jpeg", caption: "Groningen, Netherlands" },
+        { file: "photo_stage_saudi.jpeg", caption: "Riyadh, Saudi Arabia" },
+        { file: "photo_startupbootcamp.jpeg", caption: "Startupbootcamp FutureXPO" },
+        { file: "photo_naples.jpeg", caption: "Naples, Italy" },
+        { file: "photo_warm.jpeg", caption: "Somewhere beautiful" },
+        { file: "photo_fraunhofer.jpeg", caption: "Munich, Germany" },
       ],
     },
     resources: {
@@ -213,12 +213,12 @@ const T = {
       label: "Momenty",
       h2: "Zo Slovenska do sveta.",
       photos: [
-        { file: "photo_professional.jpg", caption: "Groningen, Holandsko" },
-        { file: "photo_stage_saudi.jpg", caption: "Rijád, Saudská Arábia" },
-        { file: "photo_startupbootcamp.jpg", caption: "Startupbootcamp FutureXPO" },
-        { file: "photo_naples.jpg", caption: "Neapol, Taliansko" },
-        { file: "photo_extra.jpg", caption: "Niekde krásnom" },
-        { file: "photo_fraunhofer.jpg", caption: "Mníchov, Nemecko" },
+        { file: "photo_hero.jpeg", caption: "Groningen, Holandsko" },
+        { file: "photo_stage_saudi.jpeg", caption: "Rijád, Saudská Arábia" },
+        { file: "photo_startupbootcamp.jpeg", caption: "Startupbootcamp FutureXPO" },
+        { file: "photo_naples.jpeg", caption: "Neapol, Taliansko" },
+        { file: "photo_warm.jpeg", caption: "Niekde krásnom" },
+        { file: "photo_fraunhofer.jpeg", caption: "Mníchov, Nemecko" },
       ],
     },
     resources: {
@@ -378,7 +378,7 @@ export default function LandingPage() {
               </FadeUp>
             </div>
             <FadeUp delay="delay-2" className="hero-photo-wrap">
-              <Photo src="photo_professional.jpg" alt="Simona Hutkova" className="hero-photo" placeholderLabel="photo_professional.jpg" />
+              <Photo src="photo_hero.jpeg" alt="Simona Hutkova" className="hero-photo" placeholderLabel="photo_hero.jpeg" />
             </FadeUp>
           </div>
         </div>
@@ -469,7 +469,7 @@ export default function LandingPage() {
         <div className="container">
           <div className="story-inner">
             <FadeUp className="story-photo">
-              <Photo src="photo_extra.jpg" alt="Simona" className="story-img" placeholderLabel="photo_extra.jpg" />
+              <Photo src="photo_extra.jpeg" alt="Simona" className="story-img" placeholderLabel="photo_extra.jpeg" />
             </FadeUp>
             <div className="story-text">
               <FadeUp>
