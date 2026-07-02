@@ -102,9 +102,12 @@ const T = {
       label: "Student Stories",
       h2: "What students say.",
       cards: [
-        { text: "This guide helped me figure out which country was actually right for me. I applied and got in.", name: "Zuzana K.", loc: "Slovakia", emoji: "🇸🇰" },
-        { text: "I was so overwhelmed before I found this. The step-by-step breakdown made it feel actually doable.", name: "Tomáš M.", loc: "Czech Republic", emoji: "🇨🇿" },
-        { text: "The quiz alone saved me months of confusion. I knew exactly where to look after five minutes.", name: "Sofia R.", loc: "Slovakia", emoji: "🇸🇰" },
+        { text: "Finally something that told me the truth. Not every country is for everyone and this guide helped me figure out which one is for me.", name: "Lucia K.", loc: "Slovakia", emoji: "🇸🇰" },
+        { text: "I appreciate that it's not just motivational talk. There are concrete steps, websites, templates. This is what I needed.", name: "Jakub V.", loc: "Czech Republic", emoji: "🇨🇿" },
+        { text: "Thanks to this guide I found out that the Netherlands is exactly right for me. I applied, got in, and I'm finishing my first semester — I couldn't be happier or recommend this more.", name: "Ondřej S.", loc: "Czech Republic", emoji: "🇨🇿" },
+        { text: "Genuinely the most honest thing I've read about studying abroad. No fluff, just real advice.", name: "James W.", loc: "United Kingdom", emoji: "🇬🇧" },
+        { text: "The accommodation chapter alone was worth it. I had no idea what to watch out for.", name: "Sophie B.", loc: "Arizona", emoji: "🇺🇸" },
+        { text: "I took the quiz not expecting much. Ended up applying to the Netherlands three weeks later.", name: "Oliver T.", loc: "Croatia", emoji: "🇭🇷" },
       ],
     },
     faq: {
@@ -238,9 +241,12 @@ const T = {
       label: "Príbehy študentov",
       h2: "Čo hovoria študenti.",
       cards: [
-        { text: "Tento sprievodca mi pomohol zistiť, ktorá krajina je pre mňa skutočne správna. Prihlásila som sa a bola prijatá.", name: "Zuzana K.", loc: "Slovensko", emoji: "🇸🇰" },
-        { text: "Pred tým, ako som to našla, som bola úplne preťažená. Rozdelenie krok za krokom to urobilo skutočne realizovateľným.", name: "Tomáš M.", loc: "Česká republika", emoji: "🇨🇿" },
-        { text: "Len kvíz mi ušetril mesiace zmätenia. Po piatich minútach som presne vedela, kde hľadať.", name: "Sofia R.", loc: "Slovensko", emoji: "🇸🇰" },
+        { text: "Konečne niečo, čo mi povedalo pravdu. Nie každá krajina je pre každého a táto príručka mi pomohla zistiť, ktorá je pre mňa.", name: "Lucia K.", loc: "Slovensko", emoji: "🇸🇰" },
+        { text: "Oceňuji, že to není jen motivační řeči. Jsou tam konkrétní kroky, weby, šablony. Tohle jsem potřeboval.", name: "Jakub V.", loc: "Česká republika", emoji: "🇨🇿" },
+        { text: "Díky téhle příručce jsem zjistil, že Nizozemsko je přesně pro mě. Přihlásil jsem se a dostal se a teraz končím první pololetí — nemůžu být šťastnější a víc tuto příručku doporučovat.", name: "Ondřej S.", loc: "Česká republika", emoji: "🇨🇿" },
+        { text: "Úprimne najúprimnejšia vec, ktorú som čítal o štúdiu v zahraničí. Žiadne prázdne slová, len reálne rady.", name: "James W.", loc: "Spojené kráľovstvo", emoji: "🇬🇧" },
+        { text: "Kapitola o ubytovaní samotná za to stála. Nemal som potuchy, na čo si dávať pozor.", name: "Sophie B.", loc: "Arizona", emoji: "🇺🇸" },
+        { text: "Spustil som kvíz bez veľkých očakávaní. O tri týždne som podával prihlášku do Holandska.", name: "Oliver T.", loc: "Chorvátsko", emoji: "🇭🇷" },
       ],
     },
     faq: {
