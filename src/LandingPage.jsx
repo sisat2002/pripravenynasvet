@@ -86,6 +86,7 @@ const T = {
         { file: "photo_warm.jpeg", caption: "Somewhere beautiful" },
         { file: "photo_fraunhofer.jpeg", caption: "Munich, Germany" },
         { file: "photo_award.jpeg", caption: "Focus Open 2025 — International Design Award" },
+        { file: "photo_egypt.jpeg", caption: "Cairo, Egypt" },
       ],
     },
     resources: {
@@ -221,6 +222,7 @@ const T = {
         { file: "photo_warm.jpeg", caption: "Niekde krásnom" },
         { file: "photo_fraunhofer.jpeg", caption: "Mníchov, Nemecko" },
         { file: "photo_award.jpeg", caption: "Focus Open 2025 — Medzinárodná cena za dizajn" },
+        { file: "photo_egypt.jpeg", caption: "Káhira, Egypt" },
       ],
     },
     resources: {
