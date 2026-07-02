@@ -14,7 +14,7 @@ const T = {
     },
     trust: [
       "International Business graduate — Netherlands (Honours)",
-      "Studied & worked across Europe, Middle East, Australia",
+      "Studied & worked across Europe, UK, Middle East, Australia",
       "Presented at international conferences on 3 continents",
       "Helped students navigate studying abroad",
     ],
@@ -59,8 +59,8 @@ const T = {
       label: "My Story",
       h2: "Hi, I'm Simona.",
       paragraphs: [
-        "I grew up in Martin, Slovakia. I was never the loudest person in the room. I didn't come from a wealthy family. My English wasn't perfect.",
-        "But I knew — I needed more than what I could see ahead of me at home.",
+        "I grew up in Martin, Slovakia. I was always very shy. I had very low self-esteem. I didn't come from a wealthy family. My English was very bad.",
+        "But I knew — I needed more than what I could see ahead of me in Slovakia.",
         "So at 18, I made a decision that changed everything.",
         "I spent weeks researching countries based on what actually mattered to me: affordability, student grants, safety, opportunities, international environment, and the potential to grow. I landed on the Netherlands — specifically Groningen — and the moment I arrived, it felt like home.",
         "I went on to complete a four-year Bachelor's degree in International Business (Honours Programme) at Hanze University of Applied Sciences. But studying was only part of it.",
@@ -149,7 +149,7 @@ const T = {
     },
     trust: [
       "Absolventka International Business — Holandsko (Honours)",
-      "Študovala a pracovala v Európe, na Strednom východe a v Austrálii",
+      "Študovala a pracovala v Európe, Spojenom kráľovstve, na Strednom východe a v Austrálii",
       "Prezentovala na medzinárodných konferenciách na 3 kontinentoch",
       "Pomáhala študentom zorientovať sa v štúdiu v zahraničí",
     ],
@@ -194,8 +194,8 @@ const T = {
       label: "Môj príbeh",
       h2: "Ahoj, som Simona.",
       paragraphs: [
-        "Vyrastala som v Martine na Slovensku. Nikdy som nebola najhlasnejšia v miestnosti. Nepochádzam z bohatej rodiny. Moja angličtina nebola dokonalá.",
-        "Ale vedela som — potrebujem viac, ako som mohla vidieť pred sebou doma.",
+        "Vyrastala som v Martine na Slovensku. Vždy som bola veľmi plachá. Mala som veľmi nízke sebavedomie. Nepochádzam z bohatej rodiny. Moja angličtina bola veľmi zlá.",
+        "Ale vedela som — potrebujem viac, ako som mohla vidieť pred sebou na Slovensku.",
         "Tak som v 18 rokoch urobila rozhodnutie, ktoré zmenilo všetko.",
         "Strávila som týždne výskumom krajín podľa toho, na čom mi skutočne záležalo: dostupnosť, študentské granty, bezpečnosť, príležitosti, medzinárodné prostredie a potenciál rastu. Skončila som pri Holandsku — konkrétne Groningene — a keď som tam prišla, cítila som sa ako doma.",
         "Dokončila som štyri roky bakalárskeho štúdia International Business (Honours Programme) na Hanze University of Applied Sciences. Ale štúdium bolo len časť toho.",
@@ -372,15 +372,15 @@ export default function LandingPage() {
               <FadeUp delay="delay-2">
                 <p className="hero-sub">{t.hero.sub}</p>
               </FadeUp>
-              <FadeUp delay="delay-3">
-                <div className="hero-ctas">
-                  <a href="#quiz" className="btn-primary">{t.hero.cta1}</a>
-                  <a href="#guide" className="btn-secondary">{t.hero.cta2}</a>
-                </div>
-              </FadeUp>
             </div>
             <FadeUp delay="delay-2" className="hero-photo-wrap">
               <Photo src="photo_hero.jpeg" alt="Simona Hutkova" className="hero-photo" placeholderLabel="photo_hero.jpeg" />
+            </FadeUp>
+            <FadeUp delay="delay-3" className="hero-ctas-wrap">
+              <div className="hero-ctas">
+                <a href="#quiz" className="btn-primary">{t.hero.cta1}</a>
+                <a href="#guide" className="btn-secondary">{t.hero.cta2}</a>
+              </div>
             </FadeUp>
           </div>
         </div>
