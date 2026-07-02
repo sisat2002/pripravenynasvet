@@ -178,6 +178,7 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
   transition: transform 0.15s, box-shadow 0.15s;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
@@ -194,9 +195,14 @@ body {
   text-decoration: none;
   border: 1.5px solid var(--border);
   cursor: pointer;
+  white-space: nowrap;
   transition: transform 0.15s, border-color 0.15s;
 }
 .btn-secondary:hover { transform: translateY(-2px); border-color: var(--text); }
+@media (max-width: 480px) {
+  .btn-primary, .btn-secondary { font-size: 14px; padding: 13px 20px; }
+  .product-cta { width: 100%; justify-content: center; }
+}
 .hero-photo-wrap {
   position: relative;
 }
@@ -227,7 +233,11 @@ body {
     gap: 40px;
   }
   .hero-photo-wrap { order: -1; }
-  .hero-photo, .hero-photo-placeholder { aspect-ratio: 4/3; }
+  .hero-photo, .hero-photo-placeholder { aspect-ratio: 3/4; max-height: 480px; width: 100%; }
+  .hero-photo { object-position: top center; }
+}
+@media (max-width: 480px) {
+  .hero-photo, .hero-photo-placeholder { aspect-ratio: 4/5; max-height: 400px; }
 }
 
 /* ── TRUST STRIP ── */
