@@ -104,9 +104,9 @@ const T = {
       cards: [
         { text: "Finally something that told me the truth. Not every country is for everyone and this guide helped me figure out which one is for me.", name: "Lucia K.", loc: "Slovakia", emoji: "🇸🇰" },
         { text: "I appreciate that it's not just motivational talk. There are concrete steps, websites, templates. This is what I needed.", name: "Jakub V.", loc: "Czech Republic", emoji: "🇨🇿" },
-        { text: "Thanks to this guide I found out that the Netherlands is exactly right for me. I applied, got in, and I'm finishing my first semester — I couldn't be happier or recommend this more.", name: "Ondřej S.", loc: "Czech Republic", emoji: "🇨🇿" },
+        { text: "Thanks to this guide I found out that the Netherlands is exactly right for me. I applied, got in, and I'm finishing my first semester - I couldn't be happier or recommend this more.", name: "Ondřej S.", loc: "Czech Republic", emoji: "🇨🇿" },
         { text: "Genuinely the most honest thing I've read about studying abroad. No fluff, just real advice.", name: "James W.", loc: "United Kingdom", emoji: "🇬🇧" },
-        { text: "The accommodation chapter alone was worth it. I had no idea what to watch out for.", name: "Sophie B.", loc: "Arizona", emoji: "🇺🇸" },
+        { text: "The accommodation chapter alone was worth it. I had no idea what to watch out for.", name: "Sophie B.", loc: "United Kingdom", emoji: "🇬🇧" },
         { text: "I took the quiz not expecting much. Ended up applying to the Netherlands three weeks later.", name: "Oliver T.", loc: "Croatia", emoji: "🇭🇷" },
       ],
     },
@@ -119,7 +119,8 @@ const T = {
         { q: "Who should buy The Study Abroad Guide?", a: "Anyone who wants a clear, practical, honest guide written by someone who has been through the entire process." },
         { q: "Can high school students use this?", a: "Yes — this is actually the ideal time to start planning." },
         { q: "Can university students use this?", a: "Yes — especially if you're thinking about a Master's abroad or transferring." },
-        { q: "Is the guide available in Slovak?", a: "Yes — the guide is available in both English and Slovak." },
+        { q: "How early should I start planning?", a: "Earlier than you think. Most students start too late and miss deadlines. Ideally 12 months before you want to move - but even 6 months is enough if you act super fast. The guide includes a full 12-month timeline so you know exactly what to do and when." },
+        { q: "Is this guide useful if I want to do Erasmus?", a: "Yes. Whether you're doing a full degree or an Erasmus semester, most of what's in this guide will help you. The country selection framework, budget planner, accommodation search, culture shock chapter, friendship guide, and all the bonus checklists and templates are written for any student heading abroad — not just full-degree applicants." },
       ],
     },
     email: {
@@ -243,9 +244,9 @@ const T = {
       cards: [
         { text: "Konečne niečo, čo mi povedalo pravdu. Nie každá krajina je pre každého a táto príručka mi pomohla zistiť, ktorá je pre mňa.", name: "Lucia K.", loc: "Slovensko", emoji: "🇸🇰" },
         { text: "Oceňuji, že to není jen motivační řeči. Jsou tam konkrétní kroky, weby, šablony. Tohle jsem potřeboval.", name: "Jakub V.", loc: "Česká republika", emoji: "🇨🇿" },
-        { text: "Díky téhle příručce jsem zjistil, že Nizozemsko je přesně pro mě. Přihlásil jsem se a dostal se a teraz končím první pololetí — nemůžu být šťastnější a víc tuto příručku doporučovat.", name: "Ondřej S.", loc: "Česká republika", emoji: "🇨🇿" },
+        { text: "Díky téhle příručce jsem zjistil, že Nizozemsko je přesně pro mě. Přihlásil jsem se a dostal se a teraz končím první pololetí - nemůžu být šťastnější a víc tuto příručku doporučovat.", name: "Ondřej S.", loc: "Česká republika", emoji: "🇨🇿" },
         { text: "Úprimne najúprimnejšia vec, ktorú som čítal o štúdiu v zahraničí. Žiadne prázdne slová, len reálne rady.", name: "James W.", loc: "Spojené kráľovstvo", emoji: "🇬🇧" },
-        { text: "Kapitola o ubytovaní samotná za to stála. Nemal som potuchy, na čo si dávať pozor.", name: "Sophie B.", loc: "Arizona", emoji: "🇺🇸" },
+        { text: "Kapitola o ubytovaní samotná za to stála. Nemal som potuchy, na čo si dávať pozor.", name: "Sophie B.", loc: "Spojené kráľovstvo", emoji: "🇬🇧" },
         { text: "Spustil som kvíz bez veľkých očakávaní. O tri týždne som podával prihlášku do Holandska.", name: "Oliver T.", loc: "Chorvátsko", emoji: "🇭🇷" },
       ],
     },
@@ -258,7 +259,8 @@ const T = {
         { q: "Kto by si mal kúpiť Sprievodcu štúdiom v zahraničí?", a: "Ktokoľvek, kto chce jasného, praktického a úprimného sprievodcu napísaného niekým, kto celým procesom prešiel." },
         { q: "Môžu to použiť stredoškoláci?", a: "Áno — toto je vlastne ideálny čas začať plánovať." },
         { q: "Môžu to použiť vysokoškoláci?", a: "Áno — najmä ak uvažuješ o magisterskom štúdiu v zahraničí alebo prestupe." },
-        { q: "Je sprievodca dostupný v slovenčine?", a: "Áno — sprievodca je dostupný v angličtine aj slovenčine." },
+        { q: "Kedy by som mal/a začať plánovať?", a: "Skôr, ako si myslíš. Väčšina študentov začína neskoro a nestíha deadliny. Ideálne 12 mesiacov pred odchodom - ale aj 6 mesiacov stačí, ak konáš rýchlo. Sprievodca obsahuje kompletný 12-mesačný časový plán, aby si presne vedel/a čo a kedy robiť." },
+        { q: "Je sprievodca užitočný aj pre Erasmus?", a: "Áno. Či robíš celý titul v zahraničí alebo len semester cez Erasmus, väčšina obsahu ti pomôže. Rámec výberu krajiny, plánovač rozpočtu, hľadanie ubytovania, kapitola o culture shocku, príručka priateľstiev a všetky bonusové zoznamy sú napísané pre každého študenta, ktorý odchádza do zahraničia — nielen pre tých na plnom štúdiu." },
       ],
     },
     email: {
