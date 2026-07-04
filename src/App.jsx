@@ -177,7 +177,7 @@ function OptionButton({ label, selected, onClick, multi }) {
 function ContactCapture({ onSubmit, t }) {
   const [method, setMethod] = useState("whatsapp");
   const [value, setValue] = useState("");
-  const c = t.capture;
+  const c = t.ui.capture;
 
   return (
     <div style={{ maxWidth: 480, margin: "0 auto", textAlign: "center", animation: "fadeIn 0.5s ease" }}>
