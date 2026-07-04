@@ -465,7 +465,7 @@ export default function LandingPage() {
                 <ul className="quiz-bullets">
                   {t.quiz.bullets.map((b, i) => <li key={i}>{b}</li>)}
                 </ul>
-                <a href="https://pripravenynasvet.vercel.app/quiz" className="btn-primary">{t.quiz.cta}</a>
+                <a href="/quiz" className="btn-primary">{t.quiz.cta}</a>
               </div>
               <div className="quiz-visual">
                 <div className="quiz-visual-emoji">🌍</div>
