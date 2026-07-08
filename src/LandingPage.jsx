@@ -1,82 +1,88 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./landing.css";
 
+/* ── Placeholder links — replace when ready ── */
+const GUIDE_URL = "#";
+const SUPPORT_URL = "#";
+const TIKTOK_URL = "#";
+const INSTAGRAM_URL = "#";
+
 /* ── Bilingual content ── */
 const T = {
   en: {
-    nav: { quiz: "Free Quiz", guide: "The Guide" },
+    nav: { quiz: "Free Quiz", guide: "The Guide", support: "Support" },
     hero: {
-      eyebrow: "Study Abroad Guide",
-      h1: "Study Abroad Starts Here.",
-      sub: "I left Slovakia at 18 with no rich family background and no guarantee it would work out. I just knew I needed more than what was available to me at home. Now I help students make this decision with confidence — not confusion.",
-      cta1: "🎓 Take the FREE Quiz",
-      cta2: "📘 Get The Guide — €14.99",
+      eyebrow: "Study Abroad Resources by Simona Hutkova",
+      h1: "Study Abroad Without Guesswork",
+      sub: "Free quiz, practical guides and honest advice to help you choose the right country, university and funding plan.",
+      cta1: "Get the Study Abroad Guide",
+      cta2: "Take the Free Quiz",
+      cta3: "Support my Master's journey →",
+      trust: "Created by Simona — international business graduate, former student in the Netherlands & future Master's student at ESMT Berlin.",
     },
-    trust: [
-      "International Business graduate — Netherlands (Honours)",
-      "Studied & worked across Europe, UK, Middle East, Australia",
-      "Presented at international conferences on 3 continents",
-      "Helped students navigate studying abroad",
-    ],
     product: {
-      label: "Most Popular",
-      badge: "€14.99",
-      h2: "The Study Abroad Guide",
-      tagline: "Everything you wish someone had told you before you applied.",
-      desc: "A complete step-by-step guide for students who want to study abroad but don't know where to start. Written from real experience — not from the internet.",
+      eyebrow: "Main Product",
+      badge: "€15",
+      h2: "Study Abroad Guide — Part 1",
+      tagline: "Everything I wish I knew before choosing where to study abroad.",
+      desc: "This practical workbook helps you decide whether studying abroad is right for you, choose the best country and university for your personality and goals, understand the real costs, break common money myths and build your own funding plan.",
       items: [
-        "Is studying abroad actually right for you?",
-        "How to choose the right country (and avoid the #1 mistake)",
-        "How to choose the right university and degree",
-        "Real costs — tuition, living, hidden expenses",
-        "Scholarships, student finance, working while studying",
-        "Finding accommodation and avoiding scams",
-        "Everything to do before you leave",
-        "Surviving your first week abroad",
-        "Making real friends (even as an introvert)",
-        "The emotional side nobody talks about",
+        "Decide if studying abroad is actually right for you",
+        "Choose the country that fits your personality, budget and goals",
+        "Compare universities beyond rankings",
+        "Understand tuition, living costs and hidden expenses",
+        "Learn about scholarships, grants, student finance and part-time jobs",
+        "Use worksheets, checklists and decision frameworks",
       ],
-      bonusLabel: "Bonus resources included:",
-      bonus: "Country Comparison Worksheet · Budget Planner · Scholarship Tracker · Accommodation Tracker · Motivation Letter Template · CV Template · Packing Checklist · Email Templates · 12-month Action Plan",
-      cta: "Get The Study Abroad Guide →",
-    },
-    message: {
-      line: 'There is no best country. There is only the best country for <em>YOU</em>.',
+      cta: "Buy the Guide — €15",
+      sub: "Instant PDF download. Works on phone, tablet and laptop.",
     },
     quiz: {
-      label: "Free Quiz",
-      h2: "Not sure if studying abroad is right for you?",
-      sub: "Take my free quiz to find out:",
-      bullets: [
-        "Whether studying abroad fits your personality",
-        "Which countries might suit you best",
-        "What your biggest strengths and concerns are",
-        "Where to start next",
-      ],
-      cta: "Start the Free Quiz →",
+      eyebrow: "100% Free",
+      h2: "Not sure where you should study?",
+      sub: "Take the free Study Abroad Quiz and discover which type of country might fit your personality, goals and lifestyle best.",
+      cta: "Take the Free Quiz →",
     },
-    story: {
-      label: "My Story",
-      h2: "Hi, I'm Simona.",
-      paragraphs: [
-        "I grew up in Martin, Slovakia. I was always very shy. I had very low self-esteem. I didn't come from a wealthy family. My English was very bad.",
-        "But I knew — I needed more than what I could see ahead of me in Slovakia.",
-        "So at 18, I made a decision that changed everything.",
-        "I spent weeks researching countries based on what actually mattered to me: affordability, student grants, safety, opportunities, international environment, and the potential to grow. I landed on the Netherlands — specifically Groningen — and the moment I arrived, it felt like home.",
-        "I went on to complete a four-year Bachelor's degree in International Business (Honours Programme) at Hanze University of Applied Sciences. But studying was only part of it.",
-        "From the very beginning, I said yes to every opportunity I could find.",
-        "In my second year, I competed in the NIBS Case Study Competition in Ireland — as one of the only Bachelor's students in a room full of Master's candidates. I was the youngest. I had no idea what I was doing. I went anyway.",
-        "I arranged my own internship in Australia — another continent, another leap.",
-        "I worked with Fraunhofer IDMT, Europe's largest applied research institute, on an advanced AI-powered medical device to detect post-operative ileus — cutting-edge technology at the intersection of medicine and machine learning.",
-        "I co-founded my own startup — GraphenePioneer — and flew to Saudi Arabia to pitch in front of hundreds of investors. I was 22. Every other person in that room was an experienced professional in their 50s. I was the only young woman. I presented anyway.",
-        "I went to Egypt for high-level meetings with industry leaders and government ministries.",
-        "I'm now heading to Berlin to study a Master's in Innovation and Entrepreneurship at ESMT Berlin — one of Europe's top business schools.",
-        "None of this was planned. All of it started with one decision at 18.",
+    fund: {
+      eyebrow: "Help Fund My Master's",
+      h2: "Help Fund My Dream Master's",
+      text: "I was accepted to my dream Master's in Innovation & Entrepreneurship at ESMT Berlin. The tuition is €36,000, and I'm trying to fund it through my own work, digital products and community support.",
+      goal: "Goal",
+      goalAmount: "€36,000",
+      guidePrice: "Guide price: €15",
+      funFact: "2,400 guide purchases would fully fund my tuition.",
+      cta1: "Buy the Study Abroad Guide",
+      cta2: "Support Any Amount",
+      closing: "If my content has helped you, buying the guide or sending a small support means more than you know. Every purchase helps me get one step closer while allowing me to keep creating free study abroad content for other students.",
+    },
+    support: {
+      eyebrow: "Support Options",
+      h2: "Choose how you want to help",
+      cards: [
+        { emoji: "📘", title: "Buy the Guide", desc: "Get the full Study Abroad Guide and support my Master's at the same time.", cta: "Buy for €15", href: GUIDE_URL, highlight: true },
+        { emoji: "☕", title: "Buy Me a Coffee", desc: "Want to support without buying the guide? Even a small amount helps.", cta: "Support €5", href: SUPPORT_URL, highlight: false },
+        { emoji: "🎓", title: "Support My Master's", desc: "Contribute any amount towards my ESMT Berlin tuition.", cta: "Support Any Amount", href: SUPPORT_URL, highlight: false },
       ],
-      closing: "I don't share this to impress you. I share it because I want you to see what's possible when you just go.",
+    },
+    about: {
+      eyebrow: "About",
+      h2: "Hi, I'm Simona",
+      text: "I studied abroad in the Netherlands and it completely changed my life. But when I was applying, I had no idea where to start, how to choose the right country, whether I could afford it or what I should look out for. I created these resources because they are exactly what I wish I had before making one of the biggest decisions of my life.",
+      creds: [
+        "Studied International Business abroad — Netherlands (Honours)",
+        "Lived and worked across Europe, UK, Middle East and Australia",
+        "Accepted to ESMT Berlin Master's in Innovation & Entrepreneurship",
+        "Creating practical study abroad resources for future international students",
+      ],
+    },
+    mission: {
+      eyebrow: "My Mission",
+      h2: "My mission",
+      text: "I want to make studying abroad feel less confusing, less intimidating and more accessible — especially for students who don't come from wealthy families and don't know where to start.",
+      quote: "Studying abroad shouldn't feel like guessing. It should feel like making one of the most informed decisions of your life.",
     },
     gallery: {
-      label: "Moments",
+      eyebrow: "Moments",
       h2: "From Slovakia to the world.",
       photos: [
         { file: "photo_hero.jpeg", caption: "Groningen, Netherlands" },
@@ -89,17 +95,8 @@ const T = {
         { file: "photo_egypt.jpeg", caption: "Cairo, Egypt" },
       ],
     },
-    resources: {
-      label: "Resources",
-      h2: "More Resources",
-      cards: [
-        { title: "The Study Abroad Guide", desc: "The complete step-by-step guide. Everything you need from decision to first week abroad.", badge: "available", badgeText: "Available now" },
-        { title: "Country Comparison Pack", desc: "Compare top study abroad destinations side by side.", badge: "soon", badgeText: "Coming Soon" },
-        { title: "Application Toolkit", desc: "Templates, checklists and timelines for your university applications.", badge: "soon", badgeText: "Coming Soon" },
-      ],
-    },
     testimonials: {
-      label: "Student Stories",
+      eyebrow: "Student Stories",
       h2: "What students say.",
       cards: [
         { text: "Finally something that told me the truth. Not every country is for everyone and this guide helped me figure out which one is for me.", name: "Lucia K.", loc: "Slovakia", emoji: "🇸🇰" },
@@ -111,112 +108,107 @@ const T = {
       ],
     },
     faq: {
-      label: "FAQ",
-      h2: "Frequently asked questions.",
+      eyebrow: "FAQ",
+      h2: "Frequently asked questions",
       items: [
-        { q: "Who is this for?", a: "Anyone aged 16–25 who is thinking about studying abroad but doesn't know where to start." },
-        { q: "Is the quiz really free?", a: "Yes. Completely free. No credit card needed." },
-        { q: "Who should buy The Study Abroad Guide?", a: "Anyone who wants a clear, practical, honest guide written by someone who has been through the entire process." },
-        { q: "Can high school students use this?", a: "Yes — this is actually the ideal time to start planning." },
-        { q: "Can university students use this?", a: "Yes — especially if you're thinking about a Master's abroad or transferring." },
-        { q: "How early should I start planning?", a: "Earlier than you think. Most students start too late and miss deadlines. Ideally 12 months before you want to move - but even 6 months is enough if you act super fast. The guide includes a full 12-month timeline so you know exactly what to do and when." },
-        { q: "Is this guide useful if I want to do Erasmus?", a: "Yes. Whether you're doing a full degree or an Erasmus semester, most of what's in this guide will help you. The country selection framework, budget planner, accommodation search, culture shock chapter, friendship guide, and all the bonus checklists and templates are written for any student heading abroad — not just full-degree applicants." },
+        { q: "Is the Study Abroad Guide only for people who already know where they want to study?", a: "No. It is especially useful if you are still deciding whether to study abroad, which country fits you best, which university to choose and how to finance it." },
+        { q: "Is this only for Bachelor's students?", a: "No. The frameworks are useful for Bachelor's and Master's applicants." },
+        { q: "What do I get after buying?", a: "You get an instant PDF download of the Study Abroad Guide." },
+        { q: "Can I support you without buying the guide?", a: "Yes. Use the 'Support Any Amount' option to contribute any amount towards my Master's journey." },
+        { q: "Why did you create this?", a: "Because I spent hundreds of hours researching before studying abroad and wished someone had put everything into one clear, practical roadmap." },
+        { q: "How early should I start planning?", a: "Earlier than you think. Most students start too late and miss deadlines. Ideally 12 months before you want to move - but even 6 months is enough if you act fast. The guide includes a full 12-month action plan." },
+        { q: "Is this guide useful if I want to do Erasmus?", a: "Yes. Whether you're doing a full degree or an Erasmus semester, most of what's in this guide will help you — country selection, budget planning, accommodation, and all the bonus checklists." },
       ],
     },
-    email: {
-      label: "Stay connected",
-      h2: "Stay in the loop.",
-      sub: "Practical study abroad tips, resources and updates — straight to your inbox.",
-      placeholder: "your@email.com",
-      cta: "Subscribe →",
-      confirm: "✓ You're in! Check your inbox.",
+    finalCta: {
+      h2: "Ready to plan your study abroad journey?",
+      cta1: "Buy the Guide",
+      cta2: "Take the Free Quiz",
+      cta3: "Support My Master's",
     },
     footer: {
       copy: "© 2025 Simona Hutkova. All rights reserved.",
       links: [
-        { label: "TikTok", href: "#" },
-        { label: "Instagram", href: "#" },
-        { label: "LinkedIn", href: "#" },
+        { label: "TikTok", href: TIKTOK_URL },
+        { label: "Instagram", href: INSTAGRAM_URL },
         { label: "Email", href: "mailto:sisat2002@gmail.com" },
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms", href: "#" },
       ],
     },
   },
   sk: {
-    nav: { quiz: "Bezplatný kvíz", guide: "Sprievodca" },
+    nav: { quiz: "Bezplatný kvíz", guide: "Sprievodca", support: "Podpora" },
     hero: {
-      eyebrow: "Sprievodkyňa štúdiom v zahraničí",
-      h1: "Štúdium v zahraničí začína tu.",
-      sub: "Odišla som zo Slovenska v 18 rokoch bez bohatej rodiny a bez záruky, že to vyjde. Len som vedela, že potrebujem viac, ako mi bolo k dispozícii doma. Teraz pomáham študentom urobiť toto rozhodnutie s istotou — nie zmätkom.",
-      cta1: "🎓 Spusti bezplatný kvíz",
-      cta2: "📘 Získaj sprievodcu — €14.99",
+      eyebrow: "Zdroje pre štúdium v zahraničí od Simony Hutkovej",
+      h1: "Štúdium v zahraničí bez dohadovania",
+      sub: "Bezplatný kvíz, praktické sprievodcovia a úprimné rady, ktoré ti pomôžu vybrať správnu krajinu, univerzitu a plán financovania.",
+      cta1: "Získaj sprievodcu štúdiom v zahraničí",
+      cta2: "Spusti bezplatný kvíz",
+      cta3: "Podpor moje magisterské štúdium →",
+      trust: "Vytvorila Simona — absolventka medzinárodného podnikania, bývalá študentka v Holandsku a budúca magistra na ESMT Berlin.",
     },
-    trust: [
-      "Absolventka International Business — Holandsko (Honours)",
-      "Študovala a pracovala v Európe, Spojenom kráľovstve, na Strednom východe a v Austrálii",
-      "Prezentovala na medzinárodných konferenciách na 3 kontinentoch",
-      "Pomáhala študentom zorientovať sa v štúdiu v zahraničí",
-    ],
     product: {
-      label: "Najobľúbenejšie",
-      badge: "€14.99",
-      h2: "Sprievodca štúdiom v zahraničí",
-      tagline: "Všetko, čo by ti niekto mal povedať ešte predtým, než sa prihlásiš.",
-      desc: "Kompletný sprievodca krok za krokom pre študentov, ktorí chcú študovať v zahraničí, ale nevedia, kde začať. Napísaný zo skutočnej skúsenosti — nie z internetu.",
+      eyebrow: "Hlavný produkt",
+      badge: "€15",
+      h2: "Sprievodca štúdiom v zahraničí — Časť 1",
+      tagline: "Všetko, čo by som chcela vedieť predtým, než som si vybrala, kde budem študovať.",
+      desc: "Tento praktický pracovný zošit ti pomôže rozhodnúť sa, či je štúdium v zahraničí pre teba, vybrať najlepšiu krajinu a univerzitu pre tvoju osobnosť a ciele, pochopiť reálne náklady, vyvrátiť bežné mýty o peniazoch a zostaviť vlastný plán financovania.",
       items: [
-        "Je štúdium v zahraničí skutočne pre teba?",
-        "Ako si vybrať správnu krajinu (a vyhnúť sa chybe č. 1)",
-        "Ako si vybrať správnu univerzitu a odbor",
-        "Reálne náklady — školné, životné náklady, skryté výdavky",
-        "Štipendiá, študentské financie, práca popri štúdiu",
-        "Hľadanie ubytovania a ako sa vyhnúť podvodom",
-        "Všetko, čo treba urobiť pred odchodom",
-        "Ako prežiť prvý týždeň v zahraničí",
-        "Ako si nájsť skutočných priateľov (aj ako introvert)",
-        "Emocionálna stránka, o ktorej nikto nehovorí",
+        "Rozhodni sa, či je štúdium v zahraničí skutočne pre teba",
+        "Vyber krajinu, ktorá sedí tvojej osobnosti, rozpočtu a cieľom",
+        "Porovnaj univerzity mimo rebríčkov",
+        "Pochop školné, životné náklady a skryté výdavky",
+        "Zisti o štipendiách, grantoch, študentských financiách a práci popri štúdiu",
+        "Využi pracovné listy, kontrolné zoznamy a rozhodovacie rámce",
       ],
-      bonusLabel: "Bonus materiály v cene:",
-      bonus: "Porovnanie krajín · Plánovač rozpočtu · Sledovač štipendií · Sledovač ubytovania · Šablóna motivačného listu · Šablóna CV · Zoznam vecí na balenie · Emailové šablóny · 12-mesačný akčný plán",
-      cta: "Získaj sprievodcu →",
-    },
-    message: {
-      line: 'Neexistuje najlepšia krajina. Existuje iba najlepšia krajina pre <em>TEBA</em>.',
+      cta: "Kúp sprievodcu — €15",
+      sub: "Okamžité stiahnutie PDF. Funguje na telefóne, tablete aj laptope.",
     },
     quiz: {
-      label: "Bezplatný kvíz",
-      h2: "Nie si si istý/á, či je štúdium v zahraničí pre teba?",
-      sub: "Spusti môj bezplatný kvíz a zisti:",
-      bullets: [
-        "Či štúdium v zahraničí sedí tvojej osobnosti",
-        "Ktoré krajiny by ti mohli vyhovovať najviac",
-        "Aké sú tvoje silné stránky a obavy",
-        "Kde začať ako prvý krok",
-      ],
+      eyebrow: "100% Zadarmo",
+      h2: "Nie si si istý/á kde by si mal/a študovať?",
+      sub: "Spusti bezplatný kvíz a zisti, ktorý typ krajiny by mohol najlepšie sedieť tvojej osobnosti, cieľom a životnému štýlu.",
       cta: "Spusti bezplatný kvíz →",
     },
-    story: {
-      label: "Môj príbeh",
-      h2: "Ahoj, som Simona.",
-      paragraphs: [
-        "Vyrastala som v Martine na Slovensku. Vždy som bola veľmi plachá. Mala som veľmi nízke sebavedomie. Nepochádzam z bohatej rodiny. Moja angličtina bola veľmi zlá.",
-        "Ale vedela som — potrebujem viac, ako som mohla vidieť pred sebou na Slovensku.",
-        "Tak som v 18 rokoch urobila rozhodnutie, ktoré zmenilo všetko.",
-        "Strávila som týždne výskumom krajín podľa toho, na čom mi skutočne záležalo: dostupnosť, študentské granty, bezpečnosť, príležitosti, medzinárodné prostredie a potenciál rastu. Skončila som pri Holandsku — konkrétne Groningene — a keď som tam prišla, cítila som sa ako doma.",
-        "Dokončila som štyri roky bakalárskeho štúdia International Business (Honours Programme) na Hanze University of Applied Sciences. Ale štúdium bolo len časť toho.",
-        "Od samého začiatku som hovorila áno každej príležitosti, ktorú som našla.",
-        "V druhom ročníku som súťažila na NIBS Case Study Competition v Írsku — ako jedna z mála bakalárskych študentiek v miestnosti plnej magisterských kandidátov. Bola som najmladšia. Nemala som tušenie, čo robím. Išla som aj tak.",
-        "Zariadila som si vlastnú stáž v Austrálii — ďalší kontinent, ďalší skok.",
-        "Pracovala som s Fraunhofer IDMT, najväčším európskym aplikovaným výskumným inštitútom, na vývoji pokročilého zdravotníckeho zariadenia s umelou inteligenciou na detekciu pooperatívneho ileu — technológia na hranici medicíny a strojového učenia.",
-        "Spoluzaložila som vlastný startup — GraphenePioneer — a odletela som do Saudskej Arábie, kde som prezentovala pred stovkami investorov. Mala som 22 rokov. Každý v tej miestnosti bol skúsený profesionál po päťdesiatke. Bola som jediná mladá žena. Prezentovala som aj tak.",
-        "Zúčastnila som sa rokovaní na vysokej úrovni s lídrami priemyslu a ministerstvami v Egypte.",
-        "Teraz mirim do Berlína študovať magisterský program v oblasti inovácií a podnikania na ESMT Berlin — jednej z najlepších obchodných škôl v Európe.",
-        "Nič z toho nebolo naplánované. Všetko začalo jedným rozhodnutím v 18 rokoch.",
+    fund: {
+      eyebrow: "Podpor moje magisterské štúdium",
+      h2: "Pomôž financovať môj vysnívaný magistra",
+      text: "Bola som prijatá na vysnívaný magisterský program v oblasti inovácií a podnikania na ESMT Berlin. Školné je €36 000 a snažím sa ho financovať vlastnou prácou, digitálnymi produktmi a podporou komunity.",
+      goal: "Cieľ",
+      goalAmount: "€36 000",
+      guidePrice: "Cena sprievodcu: €15",
+      funFact: "2 400 predaných sprievodcov by úplne pokrylo moje školné.",
+      cta1: "Kúp sprievodcu štúdiom v zahraničí",
+      cta2: "Podpor ľubovoľnou sumou",
+      closing: "Ak ti môj obsah pomohol, kúpa sprievodcu alebo malá podpora znamená viac, ako vieš. Každý nákup mi pomáha priblížiť sa k cieľu a zároveň mi umožňuje ďalej tvoriť bezplatný obsah o štúdiu v zahraničí pre ostatných študentov.",
+    },
+    support: {
+      eyebrow: "Možnosti podpory",
+      h2: "Vyber, ako chceš pomôcť",
+      cards: [
+        { emoji: "📘", title: "Kúp sprievodcu", desc: "Získaj kompletného sprievodcu štúdiom v zahraničí a zároveň podpor moje magisterské štúdium.", cta: "Kúp za €15", href: GUIDE_URL, highlight: true },
+        { emoji: "☕", title: "Kúp mi kávu", desc: "Chceš podporiť bez kúpy sprievodcu? Aj malá suma pomáha.", cta: "Podpor €5", href: SUPPORT_URL, highlight: false },
+        { emoji: "🎓", title: "Podpor moje štúdium", desc: "Prispej ľubovoľnou sumou na moje školné na ESMT Berlin.", cta: "Podpor ľubovoľnou sumou", href: SUPPORT_URL, highlight: false },
       ],
-      closing: "Nezdieľam to, aby som ťa ohromila. Zdieľam to, pretože chcem, aby si videl/a, čo je možné, keď jednoducho ideš.",
+    },
+    about: {
+      eyebrow: "O mne",
+      h2: "Ahoj, som Simona",
+      text: "Študovala som v zahraničí v Holandsku a úplne to zmenilo môj život. Ale keď som sa prihlasovala, nemala som ani potuchy, kde začať, ako si vybrať správnu krajinu, či si to môžem dovoliť alebo na čo si dať pozor. Vytvorila som tieto zdroje, pretože sú presne to, čo som si pred jedným z najväčších rozhodnutí môjho života priala mať.",
+      creds: [
+        "Absolventka medzinárodného podnikania v zahraničí — Holandsko (Honours)",
+        "Žila a pracovala v Európe, Spojenom kráľovstve, na Strednom východe a v Austrálii",
+        "Prijatá na magisterský program inovácií a podnikania na ESMT Berlin",
+        "Tvorí praktické zdroje o štúdiu v zahraničí pre budúcich medzinárodných študentov",
+      ],
+    },
+    mission: {
+      eyebrow: "Moje poslanie",
+      h2: "Moje poslanie",
+      text: "Chcem, aby sa štúdium v zahraničí zdalo menej mätúce, menej zastrašujúce a dostupnejšie — najmä pre študentov, ktorí nepochádzajú z bohatých rodín a nevedia, kde začať.",
+      quote: "Štúdium v zahraničí by nemalo byť o dohadovaní. Malo by byť o jednom z najlepšie informovaných rozhodnutí tvojho života.",
     },
     gallery: {
-      label: "Momenty",
+      eyebrow: "Momenty",
       h2: "Zo Slovenska do sveta.",
       photos: [
         { file: "photo_hero.jpeg", caption: "Groningen, Holandsko" },
@@ -229,17 +221,8 @@ const T = {
         { file: "photo_egypt.jpeg", caption: "Káhira, Egypt" },
       ],
     },
-    resources: {
-      label: "Materiály",
-      h2: "Viac materiálov",
-      cards: [
-        { title: "Sprievodca štúdiom v zahraničí", desc: "Kompletný sprievodca krok za krokom. Všetko, čo potrebuješ od rozhodnutia po prvý týždeň v zahraničí.", badge: "available", badgeText: "Dostupné teraz" },
-        { title: "Porovnanie krajín", desc: "Porovnaj top destinácie štúdia v zahraničí vedľa seba.", badge: "soon", badgeText: "Čoskoro" },
-        { title: "Súbor pre prihlášky", desc: "Šablóny, zoznamy a časové harmonogramy pre prihlášky na univerzitu.", badge: "soon", badgeText: "Čoskoro" },
-      ],
-    },
     testimonials: {
-      label: "Príbehy študentov",
+      eyebrow: "Príbehy študentov",
       h2: "Čo hovoria študenti.",
       cards: [
         { text: "Konečne niečo, čo mi povedalo pravdu. Nie každá krajina je pre každého a táto príručka mi pomohla zistiť, ktorá je pre mňa.", name: "Lucia K.", loc: "Slovensko", emoji: "🇸🇰" },
@@ -251,75 +234,59 @@ const T = {
       ],
     },
     faq: {
-      label: "FAQ",
-      h2: "Často kladené otázky.",
+      eyebrow: "FAQ",
+      h2: "Často kladené otázky",
       items: [
-        { q: "Pre koho je to určené?", a: "Pre kohokoľvek vo veku 16–25 rokov, kto uvažuje o štúdiu v zahraničí, ale nevie, kde začať." },
-        { q: "Je kvíz skutočne zadarmo?", a: "Áno. Úplne zadarmo. Nie je potrebná kreditná karta." },
-        { q: "Kto by si mal kúpiť Sprievodcu štúdiom v zahraničí?", a: "Ktokoľvek, kto chce jasného, praktického a úprimného sprievodcu napísaného niekým, kto celým procesom prešiel." },
-        { q: "Môžu to použiť stredoškoláci?", a: "Áno — toto je vlastne ideálny čas začať plánovať." },
-        { q: "Môžu to použiť vysokoškoláci?", a: "Áno — najmä ak uvažuješ o magisterskom štúdiu v zahraničí alebo prestupe." },
-        { q: "Kedy by som mal/a začať plánovať?", a: "Skôr, ako si myslíš. Väčšina študentov začína neskoro a nestíha deadliny. Ideálne 12 mesiacov pred odchodom - ale aj 6 mesiacov stačí, ak konáš rýchlo. Sprievodca obsahuje kompletný 12-mesačný časový plán, aby si presne vedel/a čo a kedy robiť." },
-        { q: "Je sprievodca užitočný aj pre Erasmus?", a: "Áno. Či robíš celý titul v zahraničí alebo len semester cez Erasmus, väčšina obsahu ti pomôže. Rámec výberu krajiny, plánovač rozpočtu, hľadanie ubytovania, kapitola o culture shocku, príručka priateľstiev a všetky bonusové zoznamy sú napísané pre každého študenta, ktorý odchádza do zahraničia — nielen pre tých na plnom štúdiu." },
+        { q: "Je sprievodca len pre ľudí, ktorí už vedia, kde chcú študovať?", a: "Nie. Je obzvlášť užitočný, ak sa ešte rozhoduješ, či vôbec ísť do zahraničia, ktorá krajina ti sedí, ktorú univerzitu si vybrať a ako to financovať." },
+        { q: "Je to len pre bakalárskych študentov?", a: "Nie. Rámce sú užitočné pre uchádzačov o bakalárske aj magisterské štúdium." },
+        { q: "Čo dostanem po kúpe?", a: "Dostaneš okamžité stiahnutie PDF sprievodcu." },
+        { q: "Môžem ťa podporiť bez kúpy sprievodcu?", a: "Áno. Použij možnosť 'Podpor ľubovoľnou sumou' a prispej na moje magisterské štúdium." },
+        { q: "Prečo si to vytvorila?", a: "Pretože som pred štúdiom v zahraničí strávila stovky hodín výskumom a priala som si, aby niekto dal všetko do jedného jasného, praktického plánu." },
+        { q: "Kedy by som mal/a začať plánovať?", a: "Skôr, ako si myslíš. Väčšina študentov začína neskoro a nestíha deadliny. Ideálne 12 mesiacov pred odchodom - ale aj 6 mesiacov stačí, ak konáš rýchlo. Sprievodca obsahuje kompletný 12-mesačný akčný plán." },
+        { q: "Je sprievodca užitočný aj pre Erasmus?", a: "Áno. Či robíš celý titul v zahraničí alebo len semester cez Erasmus, väčšina obsahu ti pomôže — výber krajiny, plánovanie rozpočtu, ubytovanie a všetky bonusové kontrolné zoznamy." },
       ],
     },
-    email: {
-      label: "Zostaň v kontakte",
-      h2: "Zostaň v obraze.",
-      sub: "Praktické tipy o štúdiu v zahraničí, materiály a novinky — priamo do tvojej schránky.",
-      placeholder: "tvoj@email.sk",
-      cta: "Prihlásiť sa →",
-      confirm: "✓ Super! Skontroluj svoju schránku.",
+    finalCta: {
+      h2: "Pripravený/á plánovať štúdium v zahraničí?",
+      cta1: "Kúp sprievodcu",
+      cta2: "Spusti bezplatný kvíz",
+      cta3: "Podpor moje štúdium",
     },
     footer: {
       copy: "© 2025 Simona Hutkova. Všetky práva vyhradené.",
       links: [
-        { label: "TikTok", href: "#" },
-        { label: "Instagram", href: "#" },
-        { label: "LinkedIn", href: "#" },
+        { label: "TikTok", href: TIKTOK_URL },
+        { label: "Instagram", href: INSTAGRAM_URL },
         { label: "Email", href: "mailto:sisat2002@gmail.com" },
-        { label: "Ochrana súkromia", href: "#" },
-        { label: "Podmienky", href: "#" },
       ],
     },
   },
 };
 
-/* ── Scroll animation hook ── */
+/* ── Scroll animation ── */
 function useFadeUp() {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); } },
-      { threshold: 0.12 }
+      ([e]) => { if (e.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); } },
+      { threshold: 0.1 }
     );
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
   return ref;
 }
-
 function FadeUp({ children, className = "", delay = "" }) {
   const ref = useFadeUp();
-  return (
-    <div ref={ref} className={`fade-up ${delay} ${className}`}>
-      {children}
-    </div>
-  );
+  return <div ref={ref} className={`fade-up ${delay} ${className}`}>{children}</div>;
 }
 
 /* ── Photo helper ── */
-function Photo({ src, alt, className, placeholderLabel }) {
+function Photo({ src, alt, className }) {
   const [err, setErr] = useState(false);
-  if (err || !src) {
-    return (
-      <div className={`${className}-placeholder`}>
-        <span style={{ textAlign: "center", padding: "16px" }}>{placeholderLabel || "📷 photo coming"}</span>
-      </div>
-    );
-  }
+  if (err || !src) return <div className={`${className}-placeholder`} />;
   return <img src={`/${src}`} alt={alt} className={className} onError={() => setErr(true)} />;
 }
 
@@ -329,25 +296,16 @@ function FaqItem({ q, a }) {
   return (
     <div className={`faq-item ${open ? "open" : ""}`}>
       <button className="faq-q" onClick={() => setOpen(!open)}>
-        {q}
-        <span className="faq-icon">+</span>
+        {q}<span className="faq-icon">+</span>
       </button>
       <div className="faq-a">{a}</div>
     </div>
   );
 }
 
-/* ── Main component ── */
 export default function LandingPage() {
   const [lang, setLang] = useState("en");
-  const [email, setEmail] = useState("");
-  const [emailSent, setEmailSent] = useState(false);
   const t = T[lang];
-
-  function handleEmailSubmit(e) {
-    e.preventDefault();
-    if (email.trim()) { setEmailSent(true); setEmail(""); }
-  }
 
   return (
     <>
@@ -358,12 +316,11 @@ export default function LandingPage() {
           <div className="nav-links">
             <a href="#quiz" className="nav-link">{t.nav.quiz}</a>
             <a href="#guide" className="nav-link">{t.nav.guide}</a>
+            <a href="#support" className="nav-link">{t.nav.support}</a>
           </div>
-          <div className="nav-right">
-            <div className="lang-toggle">
-              <button className={`lang-btn ${lang === "en" ? "active" : ""}`} onClick={() => setLang("en")}>EN</button>
-              <button className={`lang-btn ${lang === "sk" ? "active" : ""}`} onClick={() => setLang("sk")}>SK</button>
-            </div>
+          <div className="lang-toggle">
+            <button className={`lang-btn ${lang === "en" ? "active" : ""}`} onClick={() => setLang("en")}>EN</button>
+            <button className={`lang-btn ${lang === "sk" ? "active" : ""}`} onClick={() => setLang("sk")}>SK</button>
           </div>
         </div>
       </nav>
@@ -374,7 +331,7 @@ export default function LandingPage() {
           <div className="hero-inner">
             <div className="hero-text">
               <FadeUp>
-                <div className="hero-eyebrow">✦ {t.hero.eyebrow}</div>
+                <div className="eyebrow">✦ {t.hero.eyebrow}</div>
               </FadeUp>
               <FadeUp delay="delay-1">
                 <h1 className="hero-h1">{t.hero.h1}</h1>
@@ -383,32 +340,18 @@ export default function LandingPage() {
                 <p className="hero-sub">{t.hero.sub}</p>
               </FadeUp>
             </div>
-            <FadeUp delay="delay-2" className="hero-photo-wrap">
-              <Photo src="photo_hero.jpeg" alt="Simona Hutkova" className="hero-photo" placeholderLabel="photo_hero.jpeg" />
+            <FadeUp delay="delay-1" className="hero-photo-wrap">
+              <Photo src="photo_hero.jpeg" alt="Simona Hutkova" className="hero-photo" />
             </FadeUp>
             <FadeUp delay="delay-3" className="hero-ctas-wrap">
               <div className="hero-ctas">
-                <a href="#quiz" className="btn-primary">{t.hero.cta1}</a>
-                <a href="#guide" className="btn-secondary">{t.hero.cta2}</a>
+                <a href={GUIDE_URL} className="btn-primary">{t.hero.cta1}</a>
+                <a href="/quiz" className="btn-secondary">{t.hero.cta2}</a>
+                <a href="#support" className="hero-support-link">{t.hero.cta3}</a>
               </div>
+              <p className="hero-trust">✦ {t.hero.trust}</p>
             </FadeUp>
           </div>
-        </div>
-      </section>
-
-      {/* ── TRUST STRIP ── */}
-      <section className="trust">
-        <div className="container">
-          <FadeUp>
-            <div className="trust-grid">
-              {t.trust.map((item, i) => (
-                <div key={i} className="trust-item">
-                  <span className="trust-check">✔</span>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </FadeUp>
         </div>
       </section>
 
@@ -416,88 +359,140 @@ export default function LandingPage() {
       <section className="section" id="guide">
         <div className="container">
           <FadeUp>
-            <div className="section-label">{t.product.label}</div>
+            <div className="eyebrow">{t.product.eyebrow}</div>
             <div className="product-card">
               <div className="product-mockup">
                 <div className="mockup-book">
-                  <div className="mockup-book-spine" />
-                  <div className="mockup-book-content">
-                    <div className="mockup-book-tag">Study Abroad</div>
-                    <div className="mockup-book-title">The Study Abroad Guide</div>
-                    <div className="mockup-book-sub">by Simona Hutkova</div>
-                    <div className="mockup-book-decor" />
+                  <div className="mockup-spine" />
+                  <div className="mockup-content">
+                    <div className="mockup-tag">Study Abroad</div>
+                    <div className="mockup-title">The Study Abroad Guide</div>
+                    <div className="mockup-author">by Simona Hutkova</div>
+                    <div className="mockup-bar" />
                   </div>
                 </div>
               </div>
               <div className="product-body">
-                <div className="product-price-badge">⭐ {t.product.badge}</div>
-                <h2 className="product-h2">{t.product.h2}</h2>
+                <div className="product-badge">⭐ {t.product.badge}</div>
+                <h2 className="section-h2">{t.product.h2}</h2>
                 <p className="product-tagline">{t.product.tagline}</p>
-                <ul className="product-checklist">
+                <p className="product-desc">{t.product.desc}</p>
+                <ul className="checklist">
                   {t.product.items.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
-                <p className="product-bonus"><strong>{t.product.bonusLabel}</strong> {t.product.bonus}</p>
-                <a href="#" className="btn-primary product-cta">{t.product.cta}</a>
+                <a href={GUIDE_URL} className="btn-primary product-cta">{t.product.cta}</a>
+                <p className="product-sub">{t.product.sub}</p>
               </div>
             </div>
           </FadeUp>
         </div>
       </section>
 
-      {/* ── MESSAGE STRIP ── */}
-      <div className="message-strip">
-        <div className="container">
-          <FadeUp>
-            <p dangerouslySetInnerHTML={{ __html: t.message.line }} />
-          </FadeUp>
-        </div>
-      </div>
-
       {/* ── QUIZ ── */}
-      <section className="section quiz-section" id="quiz">
+      <section className="section section-alt" id="quiz">
         <div className="container">
           <FadeUp>
             <div className="quiz-card">
-              <div>
-                <div className="section-label">{t.quiz.label}</div>
+              <div className="quiz-text">
+                <div className="eyebrow">{t.quiz.eyebrow}</div>
                 <h2 className="section-h2">{t.quiz.h2}</h2>
-                <p style={{ fontSize: 16, color: "var(--muted)", marginBottom: 20 }}>{t.quiz.sub}</p>
-                <ul className="quiz-bullets">
-                  {t.quiz.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                </ul>
-                <a href="/quiz" className="btn-primary">{t.quiz.cta}</a>
+                <p className="section-sub">{t.quiz.sub}</p>
+                <a href="/quiz" className="btn-gold">{t.quiz.cta}</a>
               </div>
               <div className="quiz-visual">
-                <div className="quiz-visual-emoji">🌍</div>
-                <div className="quiz-visual-text">Kde smeruješ? / Where are you headed?</div>
+                <div className="quiz-emoji">🌍</div>
+                <div className="quiz-visual-label">Study Abroad Quiz</div>
               </div>
             </div>
           </FadeUp>
         </div>
       </section>
 
-      {/* ── STORY ── */}
-      <section className="section" id="story">
+      {/* ── FUND MY MASTER'S ── */}
+      <section className="section fund-section" id="support">
         <div className="container">
-          <div className="story-inner">
-            <FadeUp className="story-photo">
-              <Photo src="photo_extra.jpeg" alt="Simona" className="story-img" placeholderLabel="photo_extra.jpeg" />
-            </FadeUp>
-            <div className="story-text">
-              <FadeUp>
-                <div className="section-label">{t.story.label}</div>
-                <h2 className="section-h2">{t.story.h2}</h2>
+          <FadeUp>
+            <div className="eyebrow eyebrow-light">{t.fund.eyebrow}</div>
+            <h2 className="section-h2 light">{t.fund.h2}</h2>
+            <p className="fund-text">{t.fund.text}</p>
+            <div className="fund-stats">
+              <div className="fund-stat">
+                <div className="fund-stat-label">{t.fund.goal}</div>
+                <div className="fund-stat-value">{t.fund.goalAmount}</div>
+              </div>
+              <div className="fund-divider" />
+              <div className="fund-stat">
+                <div className="fund-stat-label">{t.fund.guidePrice}</div>
+                <div className="fund-stat-value fund-fact">"{t.fund.funFact}"</div>
+              </div>
+            </div>
+            <div className="fund-ctas">
+              <a href={GUIDE_URL} className="btn-primary">{t.fund.cta1}</a>
+              <a href={SUPPORT_URL} className="btn-outline-light">{t.fund.cta2}</a>
+            </div>
+            <p className="fund-closing">{t.fund.closing}</p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── SUPPORT OPTIONS ── */}
+      <section className="section">
+        <div className="container">
+          <FadeUp>
+            <div className="eyebrow">{t.support.eyebrow}</div>
+            <h2 className="section-h2">{t.support.h2}</h2>
+          </FadeUp>
+          <div className="support-grid">
+            {t.support.cards.map((card, i) => (
+              <FadeUp key={i} delay={`delay-${i + 1}`}>
+                <div className={`support-card ${card.highlight ? "highlight" : ""}`}>
+                  <div className="support-emoji">{card.emoji}</div>
+                  <div className="support-title">{card.title}</div>
+                  <p className="support-desc">{card.desc}</p>
+                  <a href={card.href} className={card.highlight ? "btn-primary" : "btn-gold"}>{card.cta}</a>
+                </div>
               </FadeUp>
-              {t.story.paragraphs.map((p, i) => (
-                <FadeUp key={i} delay={i % 2 === 0 ? "delay-1" : ""}>
-                  <p>{p}</p>
-                </FadeUp>
-              ))}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ABOUT ── */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="about-inner">
+            <FadeUp className="about-photo-wrap">
+              <Photo src="photo_extra.jpeg" alt="Simona" className="about-photo" />
+            </FadeUp>
+            <div className="about-text">
+              <FadeUp>
+                <div className="eyebrow">{t.about.eyebrow}</div>
+                <h2 className="section-h2">{t.about.h2}</h2>
+              </FadeUp>
               <FadeUp delay="delay-1">
-                <p className="bold-line">{t.story.closing}</p>
+                <p className="about-p">{t.about.text}</p>
+              </FadeUp>
+              <FadeUp delay="delay-2">
+                <ul className="cred-list">
+                  {t.about.creds.map((c, i) => (
+                    <li key={i}><span className="cred-check">✔</span>{c}</li>
+                  ))}
+                </ul>
               </FadeUp>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── MISSION ── */}
+      <section className="section mission-section">
+        <div className="container">
+          <FadeUp>
+            <div className="eyebrow eyebrow-light">{t.mission.eyebrow}</div>
+            <h2 className="section-h2 light">{t.mission.h2}</h2>
+            <p className="mission-text">{t.mission.text}</p>
+            <blockquote className="mission-quote">"{t.mission.quote}"</blockquote>
+          </FadeUp>
         </div>
       </section>
 
@@ -505,14 +500,14 @@ export default function LandingPage() {
       <section className="section section-alt">
         <div className="container">
           <FadeUp>
-            <div className="section-label">{t.gallery.label}</div>
+            <div className="eyebrow">{t.gallery.eyebrow}</div>
             <h2 className="section-h2" style={{ marginBottom: 40 }}>{t.gallery.h2}</h2>
           </FadeUp>
           <FadeUp delay="delay-1">
             <div className="gallery-grid">
               {t.gallery.photos.map((photo, i) => (
                 <div key={i} className="gallery-item">
-                  <Photo src={photo.file} alt={photo.caption} className="gallery-img" placeholderLabel={photo.file} />
+                  <Photo src={photo.file} alt={photo.caption} className="gallery-img" />
                   <div className="gallery-caption">{photo.caption}</div>
                 </div>
               ))}
@@ -521,37 +516,16 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── RESOURCES ── */}
+      {/* ── TESTIMONIALS ── */}
       <section className="section">
         <div className="container">
           <FadeUp>
-            <div className="section-label">{t.resources.label}</div>
-            <h2 className="section-h2" style={{ marginBottom: 40 }}>{t.resources.h2}</h2>
-          </FadeUp>
-          <div className="resources-grid">
-            {t.resources.cards.map((card, i) => (
-              <FadeUp key={i} delay={`delay-${i + 1}`}>
-                <div className={`resource-card ${card.badge === "available" ? "available" : ""}`}>
-                  <span className={`resource-badge ${card.badge}`}>{card.badgeText}</span>
-                  <div className="resource-title">{card.title}</div>
-                  <p className="resource-desc">{card.desc}</p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── TESTIMONIALS ── */}
-      <section className="section section-alt">
-        <div className="container">
-          <FadeUp>
-            <div className="section-label">{t.testimonials.label}</div>
+            <div className="eyebrow">{t.testimonials.eyebrow}</div>
             <h2 className="section-h2" style={{ marginBottom: 40 }}>{t.testimonials.h2}</h2>
           </FadeUp>
           <div className="testimonials-grid">
             {t.testimonials.cards.map((card, i) => (
-              <FadeUp key={i} delay={`delay-${i + 1}`}>
+              <FadeUp key={i} delay={`delay-${(i % 3) + 1}`}>
                 <div className="testimonial-card">
                   <div className="testimonial-stars">★★★★★</div>
                   <p className="testimonial-text">"{card.text}"</p>
@@ -570,10 +544,10 @@ export default function LandingPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="section">
+      <section className="section section-alt">
         <div className="container">
           <FadeUp>
-            <div className="section-label">{t.faq.label}</div>
+            <div className="eyebrow">{t.faq.eyebrow}</div>
             <h2 className="section-h2" style={{ marginBottom: 40 }}>{t.faq.h2}</h2>
           </FadeUp>
           <FadeUp delay="delay-1">
@@ -586,25 +560,16 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── EMAIL ── */}
-      <section className="section email-section">
+      {/* ── FINAL CTA ── */}
+      <section className="section final-cta-section">
         <div className="container">
           <FadeUp>
-            <div className="section-label">{t.email.label}</div>
-            <h2 className="section-h2">{t.email.h2}</h2>
-            <p className="section-sub">{t.email.sub}</p>
-            <form className="email-form" onSubmit={handleEmailSubmit}>
-              <input
-                type="email"
-                className="email-input"
-                placeholder={t.email.placeholder}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <button type="submit" className="btn-accent">{t.email.cta}</button>
-            </form>
-            <p className="email-confirm">{emailSent ? t.email.confirm : ""}</p>
+            <h2 className="section-h2 light">{t.finalCta.h2}</h2>
+            <div className="final-ctas">
+              <a href={GUIDE_URL} className="btn-primary">{t.finalCta.cta1}</a>
+              <a href="/quiz" className="btn-outline-light">{t.finalCta.cta2}</a>
+              <a href={SUPPORT_URL} className="btn-outline-light">{t.finalCta.cta3}</a>
+            </div>
           </FadeUp>
         </div>
       </section>
